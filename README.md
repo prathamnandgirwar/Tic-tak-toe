@@ -56,7 +56,7 @@ pipeline{
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'p', usernameVariable: 'u')]) {
     // some block
                     sh "docker login -u ${env.u} -p ${env.p}"
-                       sh "docker build -t yic-tak-toe ."
+                       sh "docker build -t tic-tak-toe ."
                        sh "docker tag tic-tak-toe prathamnandgiwar/tic-tak-toe:latest "
                        sh "docker push prathamnandgiwar/tic-tak-toe:latest "
                     
